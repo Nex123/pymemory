@@ -68,7 +68,7 @@ def get_module_base_address(pid, moduleName):
     mod = module32_first(hModuleSnap, ctypes.pointer(me32))
 
     if not mod:
-        print("Error getting client_panorama.dll base address", getLastError())
+        print("Error getting {} base address".format(moduleName), getLastError())
         mem.close_handle(hModuleSnap)
         return False
     while mod:
